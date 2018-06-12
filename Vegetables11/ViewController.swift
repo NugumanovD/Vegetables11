@@ -53,11 +53,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let vc = SFSafariViewController(url: url!)
             present(vc, animated: true, completion: nil)
         } 
-//            let urls = URL(string: vegetablesArray[indexPath.row].url)!
-//            UIApplication.shared.open(urls)
-//            tableView.deselectRow(at: indexPath, animated: true)
-        }
         
+    }
+    
     func buttonSettings() {
         button.tintColor = UIColor.brown
         
