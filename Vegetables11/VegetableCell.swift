@@ -8,20 +8,25 @@
 
 import UIKit
 
+enum CellIdentifiers {
+    
+    static let first = "firstCell"
+    static let second = "secondCell"
+}
+
 class VegetableCell: UITableViewCell {
     
-    @IBOutlet weak var imageVegetable: UIImageView!
+    @IBOutlet private var imageVegetable: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var numberOfCalories: UILabel!
-    @IBOutlet private var url: UILabel!
+    @IBOutlet private var urlLabel: UILabel!
     
-    func configure(image: UIImage) {
-        imageVegetable.image = image
+    func configure(with vegetable: UIImage) {
+        imageVegetable.image = vegetable
     }
     
     func setName(label: Vegetable) {
         nameLabel.text = "Name: \(label.name)"
-        
     }
     
     func setCalories(label: Vegetable) {
@@ -29,6 +34,6 @@ class VegetableCell: UITableViewCell {
     }
     
     func setURL(label: Vegetable) {
-        url.text = "Go to: \(label.url)"
+        urlLabel.text = "Go to: \(label.urlLabel)"
     }
 }
