@@ -26,5 +26,5 @@ let carrot = Vegetable(name: "Carrot", numberOfCalories: "41 cal. / 100 gr.", ur
 let potatoes = Vegetable(name: "Potatoes", numberOfCalories: "47 cal. / 100 gr.", urlLabel: "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D1%82%D0%BE%D1%84%D0%B5%D0%BB%D1%8C", imageVegeteable: "potatoes")
     
     
-let vegetablesArray = [carrot, potatoes]
+let vegetablesArray: [Vegetable] = [carrot, potatoes]
 

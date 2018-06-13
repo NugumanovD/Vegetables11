@@ -104,11 +104,14 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="20c-Xd-yrH" secondAttribute="trailing" id="yCN-iL-IFc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" link="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="imageVegetable" destination="ZLX-7e-gRm" id="60u-ae-bTe"/>
                                             <outlet property="nameLabel" destination="ygL-rS-P0Q" id="Km8-TO-g5W"/>
                                             <outlet property="numberOfCalories" destination="XBw-GC-qZp" id="IGW-hI-IHr"/>
-                                            <outlet property="url" destination="20c-Xd-yrH" id="UIp-Pp-shz"/>
+                                            <outlet property="urlLabel" destination="20c-Xd-yrH" id="9Fy-Ea-8Qi"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

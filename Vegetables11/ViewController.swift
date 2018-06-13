@@ -36,7 +36,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         switch identifire {
         case CellIdentifiers.first:
             cell.setName(label: vegetablesArray[indexPath.row])
-            
             cell.configure(with: UIImage(named: vegetablesArray[indexPath.row].imageVegeteable)!)
         case CellIdentifiers.second:
             cell.setName(label: vegetablesArray[indexPath.row])
@@ -51,7 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isButton == false {
+        if isButton {
             let url = URL(string: vegetablesArray[indexPath.row].urlLabel)
             let vc = SFSafariViewController(url: url!)
             present(vc, animated: true, completion: nil)
