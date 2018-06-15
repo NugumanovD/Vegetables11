@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 enum CellIdentifiers {
     
@@ -15,7 +16,7 @@ enum CellIdentifiers {
 }
 
 class VegetableCell: UITableViewCell {
-    
+
     @IBOutlet private var imageVegetable: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var numberOfCalories: UILabel!

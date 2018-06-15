@@ -14,6 +14,7 @@
 		7BDF10A720CBE5C0008A3F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BDF10A620CBE5C0008A3F84 /* Assets.xcassets */; };
 		7BDF10AA20CBE5C0008A3F84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BDF10A820CBE5C0008A3F84 /* LaunchScreen.storyboard */; };
 		7BDF10B220CBE8B8008A3F84 /* VegetableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDF10B120CBE8B8008A3F84 /* VegetableCell.swift */; };
+		A18D2674887DD308422A654B /* Pods_Vegetables11.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A61BE9205F682CB3EB97F8 /* Pods_Vegetables11.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		7BDF10A920CBE5C0008A3F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BDF10AB20CBE5C0008A3F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BDF10B120CBE8B8008A3F84 /* VegetableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegetableCell.swift; sourceTree = "<group>"; };
+		C6A61BE9205F682CB3EB97F8 /* Pods_Vegetables11.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vegetables11.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDED669A8839B69097173403 /* Pods-Vegetables11.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vegetables11.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vegetables11/Pods-Vegetables11.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18D2674887DD308422A654B /* Pods_Vegetables11.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +89,7 @@
 		F9643F53AEC36730BFE9965A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6A61BE9205F682CB3EB97F8 /* Pods_Vegetables11.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,6 +105,7 @@
 				7BDF109820CBE5C0008A3F84 /* Sources */,
 				7BDF109920CBE5C0008A3F84 /* Frameworks */,
 				7BDF109A20CBE5C0008A3F84 /* Resources */,
+				BAEBA1CB2D66F0816DD222D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,6 +180,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAEBA1CB2D66F0816DD222D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Vegetables11/Pods-Vegetables11-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vegetables11/Pods-Vegetables11-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
