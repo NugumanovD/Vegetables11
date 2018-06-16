@@ -11,6 +11,7 @@ import SafariServices
 import ChameleonFramework
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var vegetables = [Vegetable]()
     
     private var isButton = Bool()
     
@@ -22,11 +23,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.reloadData()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        append()
+        print(vegetables.count)
+    }
+    
     func colorForCell(index: Int) -> UIColor {
-        let itemCount = vegetablesArray.count - 1
-        let color = (CGFloat(index) / CGFloat(itemCount)) * 0.6
+        let color = (CGFloat(index) / CGFloat(vegetables.count)) * 1.2
+        return UIColor(red: -2.0, green: CGFloat(ColorScheme.complementary.hashValue), blue: color, alpha: 0.8)
         
-        return UIColor(red: 1.0, green: color, blue: 0.0, alpha: 1.0)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -34,39 +40,41 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vegetablesArray.count
+        return vegetables.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let identifire = isButton ? CellIdentifiers.second : CellIdentifiers.first
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: identifire, for: indexPath) as! VegetableCell
-        
         
         switch identifire {
         case CellIdentifiers.first:
-            cell.setName(label: vegetablesArray[indexPath.row])
-            cell.configure(with: (UIImage(named: vegetablesArray[indexPath.row].imageVegeteable))!)
+            cell.setName(label: vegetables[indexPath.row])
+            cell.configure(with: UIImage(named: vegetables[indexPath.row].imageVegeteable)!)
         case CellIdentifiers.second:
-            cell.setName(label: vegetablesArray[indexPath.row])
-            cell.configure(with: UIImage(named: vegetablesArray[indexPath.row].imageVegeteable)!)
-            cell.setCalories(label: vegetablesArray[indexPath.row])
-            cell.setURL(label: vegetablesArray[indexPath.row])
+            cell.setName(label: vegetables[indexPath.row])
+            cell.configure(with: UIImage(named: vegetables[indexPath.row].imageVegeteable)!)
+            cell.setCalories(label: vegetables[indexPath.row])
+            cell.setURL(label: vegetables[indexPath.row])
         default:
             fatalError()
         }
-        //random color change after click
-        button.backgroundColor = UIColor.randomFlat()
+        
+        button.backgroundColor = colorForCell(index: indexPath.row)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isButton {
-            let url = URL(string: vegetablesArray[indexPath.row].urlLabel)
+            let url = URL(string: vegetables[indexPath.row].urlLabel)
             let vc = SFSafariViewController(url: url!)
             present(vc, animated: true, completion: nil)
         }
+    }
+    
+    func append() {
+        vegetables = [carrot, cabbage, potatoes, beets, onions, peas, cucumber, corn]
     }
 }
 

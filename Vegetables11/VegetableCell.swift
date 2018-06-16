@@ -16,7 +16,7 @@ enum CellIdentifiers {
 }
 
 class VegetableCell: UITableViewCell {
-
+    var vegetables = [Vegetable]()
     @IBOutlet private var imageVegetable: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var numberOfCalories: UILabel!
@@ -37,4 +37,6 @@ class VegetableCell: UITableViewCell {
     func setURL(label: Vegetable) {
         urlLabel.text = "Go to: \(label.urlLabel)"
     }
+    
 }
+
